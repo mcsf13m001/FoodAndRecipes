@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "Meat";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meat - Food &amp; Recipes</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#flip").click(function () {
+                    $("#panel").slideToggle("slow");
+                });
+            });
+        </script>
+
+        <style>
+            #panel, #flip {
+                padding: 5px;
+                text-align: center;
+                background-color: #e5eecc;
+                border: solid 1px #c3c3c3;
+            }
+
+            #panel {
+                padding: 50px;
+                display: none;
+            }
+            #nav {
+    list-style: none;
+    margin-bottom: 10px;
+  
+    position: relative;
+    right: 286px;
+    z-index: 9;
+    height: 26px;
+    padding: 4px 4px 4px 4px;
+    font-weight: bold;
+}
+    #nav li {
+
+    float: right;
+    margin-right: 10px;
+}
+
+#nav a {
+
+    display:block;
+    padding: 5px;
+    color: #444444;
+    background: #fff;
+    text-decoration: none;
+    border: 1px solid grey;
+
+}
+
+#nav a:hover {
+    color: #fff;
+    background: #901f1f;
+}
+        </style>
+
+</head>
+<body>
+	
+	<div class="body">
+		<div>
+			<div class="header">
+				<ul>
+					<li>
+                        @Html.ActionLink("Home", "Index", "Home");
+					</li>
+					<li class="current">
+                        @Html.ActionLink("Menu", "Menu", "Menu");                             
+					</li>
+					<li >
+                        @Html.ActionLink("Videos", "videos", "Home");
+					</li>
+					<li>
+                        @Html.ActionLink("About", "about", "About");
+					</li>
+					<li>
+                        @Html.ActionLink("Blog", "blog", "Home");
+					</li>                 
+                    <li>
+                        @Html.ActionLink("Contact Us", "Contact", "Home");
+					</li>
+                    <li>
+                        @Html.ActionLink("Login", "login", "Login");
+					</li>
+				</ul>
+			</div>
+			<div class="body">
+				<div id="content">
+                  
+					<div>
+                        
+                  <section id="flip"><h3>View Menu</h3></section>
+                     <div id="panel" style="text-align:center">
+                         <div>
+                             
+                             <div id="nav" style="text-align:center; vertical-align:central">
+                            
+                            @Html.ActionLink("Meat", "Meat", "Menu")
+                             @Html.ActionLink("Rice", "Rice", "Menu")
+                             @Html.ActionLink("Drinks", "Drinks", "Menu")
+                             @Html.ActionLink("Deserts", "Deserts", "Menu")
+                             @Html.ActionLink("Fast Food", "FastFood", "Menu")
+                            
+                            </div> 
+                          </div>   
+                        
+                       </div>
+                         <h2 > &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp MEAT Recipes</h2>
+					<ul>
+							<li style="height:500px; padding-left:50px">
+                                <h3>Beef Seekh Kabab</h3>
+								<div ><a href="~/Menu/Meat"><img src="~/images/meat1.jpg" alt="Image" width="600" height="400"></a>									
+								</div>
+							</li>
+						<li style="height:500px; padding-left:50px">
+                                <h3>Chinese Tikkah Kabab</h3>
+								<div ><a href="~/Menu/Meat"><img src="~/images/meat2.jpg" alt="Image" width="600" height="400"></a>									
+								</div>
+							</li>
+							<li style="height:500px; padding-left:50px">
+                                <h3>Chicken Cheese Roll</h3>
+								<div ><a href="~/Menu/Meat"><img src="~/images/meat3.jpg" alt="Image" width="600" height="400"></a>									
+								</div>
+							</li>
+							<li style="height:500px; padding-left:50px">
+                                <h3>Dhaka Chicken</h3>
+								<div ><a href="~/Menu/Meat"><img src="~/images/meat4.jpg" alt="Image" width="600" height="400"></a>									
+								</div>
+							</li>
+							<li style="height:500px; padding-left:50px">
+                                <h3>Chicken Qorma</h3>
+								<div ><a href="~/Menu/Meat"><img src="~/images/meat5.jpg" alt="Image" width="600" height="400"></a>									
+								</div>
+							</li>
+						</ul>
+
+                        
+					</div>
+				</div>
+			</div>
+		</div>
+			<div>
+			<div>
+				<h3>Cooking Video</h3>
+				<a href="~/Home/videos"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+			<div>
+				<h3>Featured Recipes</h3>
+				<ul id="featured">
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/sandwich.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Beef Sandwich</a></h2>
+							<span>by: Anna</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Biscuit &amp; Sandwich</a></h2>
+							<span>by: Sarah</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/pizza.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Delicious Pizza</a></h2>
+							<span>by: Rico</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Blog</h3>
+				<ul id="blog">
+					<li>
+						<a href="~/Home/blog">Your website is really fantastic.</a>
+						<span class="date">Jan 9, by Liza</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">I love your recipes.your website is a great platform.</a>
+						<span class="date">Feb 16, by Myk</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">Food and recipes online is really awesome.</a>
+						<span class="date">March 15, by Xaxan</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Get Updates</h3>
+				<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+				<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+				<a href="http://freewebsitetemplates.com/go/youtube/" target="_blank" id="youtube">Youtube</a>
+				<a href="http://freewebsitetemplates.com/go/flickr/" target="_blank" id="flickr">Flickr</a>
+				<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
+			</div>
+		</div>
+	
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+
+	</div>
+        </div>
+</body>
+</html>

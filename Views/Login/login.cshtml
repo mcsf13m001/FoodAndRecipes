@@ -1,0 +1,200 @@
+﻿@model MvcApplication3.Models.LoginModel
+@{
+    ViewBag.Title = "login";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login - Cooking Recipe</title>  
+   <link rel="stylesheet" type="text/css" href="~/content/style1.css">   
+	<link rel="stylesheet" type="text/css" href="~/content/style.css">
+</head>
+<body>
+	<div class="body">
+		<div>
+			<div class="header">
+				<ul>
+					<li>
+                        @Html.ActionLink("Home", "Index", "Home");
+					</li>
+					<li>
+                        @Html.ActionLink("Menu", "Menu", "Menu");                             
+					</li>
+					<li >
+                        @Html.ActionLink("Videos", "videos", "Home");
+					</li>
+					<li>
+                        @Html.ActionLink("About", "about", "About");
+					</li>
+					<li>
+                        @Html.ActionLink("Blog", "blog", "Home");
+					</li>                 
+                    <li>
+                        @Html.ActionLink("Contact Us", "Contact", "Home");
+					</li>
+                    <li  class="current">
+                       @* @Html.ActionLink("Login", "login", "Login");*@
+                        @Html.Partial("LoginPartial")
+
+					</li>
+				</ul>
+			</div>
+			<div class="body">
+				<div id="content">
+					<div>
+						<div>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <section class="container">
+    <div class="login">
+      <h1>Login</h1>
+            @using (Html.BeginForm("Login","Login" ,FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                            @Html.LabelFor(m => m.Name)
+                            @Html.TextBoxFor(m => m.Name)
+                            @Html.ValidationMessageFor(m => m.Name)
+                    <br />
+
+                            @Html.LabelFor(m => m.Password)
+                            @Html.PasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password)
+                    <br />
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    <br />
+                    <input type="submit" value="Log in" />
+                <br />
+                <br />
+              
+            }
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+     @* <form method="post" action="~/Login/loginUser">
+        <p><input type="text" name="email" value="" placeholder=" Email" required></p>
+        <p><input type="password" name="password" value="" placeholder="Password" required></p>
+        <p class="remember_me">
+          <label>
+            <input type="checkbox" name="remember_me" id="remember_me">
+            Remember me on this computer
+          </label>
+        </p>
+        <p class="submit"><input type="submit" name="commit" value="Login" onclick="alert(LoginSuccessful)"></p>
+          <br/>
+      </form>*@
+    </div>
+      <a href="~/Home/Index" >Logout</a>
+      <br /><a href="~/Login/Edit" >Edit</a>
+    <div class="login-help">
+      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+          <h4>Not Registered?</h4>
+                            @Html.ActionLink("Click here to register", "Register", "Register")
+                         
+                            <br />
+    </div>
+  </section>
+
+                                  
+								<p> Dear user! please login to upload or download recipes and become a permanent member of out website
+							</p><h5><i>Thankyou</i></h5>
+                          
+  <section class="about">
+    <p class="about-links">
+      <a href="http://www.cssflow.com/snippets/login-form" target="_parent">View Article</a>
+      <a href="http://www.cssflow.com/snippets/login-form.zip" target="_parent">Download</a>
+    </p>
+    <p class="about-author">
+      &copy; 2012&ndash;2013 <a href="http://thibaut.me" target="_blank">Thibaut Courouble</a> -
+      <a href="http://www.cssflow.com/mit-license" target="_blank">MIT License</a><br>
+      Original PSD by <a href="http://www.premiumpixels.com/freebies/clean-simple-login-form-psd/" target="_blank">Orman Clark</a>
+  </section>
+
+         
+                          
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h3>Cooking Video</h3>
+				<a href="~/Home/videos"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+			<div>
+				<h3>Featured Recipes</h3>
+				<ul id="featured">
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/sandwich.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Beef Sandwich</a></h2>
+							<span>by: Anna</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Biscuit &amp; Sandwich</a></h2>
+							<span>by: Sarah</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/pizza.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Delicious Pizza</a></h2>
+							<span>by: Rico</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Blog</h3>
+				<ul id="blog">
+					<li>
+						<a href="~/Home/blog">Your website is really fantastic.</a>
+						<span class="date">Jan 9, by Liza</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">I love your recipes.your website is a great platform.</a>
+						<span class="date">Feb 16, by Myk</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">Food and recipes online is really awesome.</a>
+						<span class="date">March 15, by Xaxan</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Get Updates</h3>
+				<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+				<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+				<a href="http://freewebsitetemplates.com/go/youtube/" target="_blank" id="youtube">Youtube</a>
+				<a href="http://freewebsitetemplates.com/go/flickr/" target="_blank" id="flickr">Flickr</a>
+				<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
+			</div>
+		</div>
+	
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+
+	</div>
+        </div>
+</body>
+</html>

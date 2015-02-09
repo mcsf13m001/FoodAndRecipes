@@ -1,0 +1,216 @@
+﻿@using System.Web.Optimization
+@model MvcApplication3.Models.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register - Cooking Recipe Web Template</title>
+    	<link rel="stylesheet" type="text/css" href="~/content/demo.css">
+    	<link rel="stylesheet" type="text/css" href="~/content/styleRForm.css">   
+	<link rel="stylesheet" type="text/css" href="~/content/style.css">
+    <script>
+        function alert()
+        {
+            var a = "Registration Successful!";
+            return a;
+        }
+    </script>
+</head>
+
+<body>
+	<div class="body">
+		<div>
+			<div class="header">
+				<ul>
+					<li>
+                        @Html.ActionLink("Home", "Index", "Home");
+					</li>
+					<li>
+                        @Html.ActionLink("Menu", "Menu", "Menu");                             
+					</li>
+					<li >
+                        @Html.ActionLink("Videos", "videos", "Home");
+					</li>
+					<li>
+                        @Html.ActionLink("About", "about", "About");
+					</li>
+					<li>
+                        @Html.ActionLink("Blog", "blog", "Home");
+					</li>                 
+                    <li>
+                        @Html.ActionLink("Contact Us", "Contact", "Home");
+					</li>
+                    <li  class="current">
+                        @Html.ActionLink("Login", "login", "Login");
+					</li>
+				</ul>
+			</div>
+			<div class="body">
+				<div id="content">
+					<div>
+						<div>
+        
+                            
+    <h3>Register here</h3>
+	
+                      <br />
+                            @* @{Html.BeginForm("login", "Login", FormMethod.Post);}
+                          <div class="label">
+                                @Html.LabelFor(model => Model.Name)
+                                @Html.EditorForModel();
+                            </div>                        *@
+
+<section class="form">
+     @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend style="text-align:center;" >Registration Form</legend>
+        <br />
+        <br />
+                @Html.LabelFor(m=> m.Name)
+                @Html.TextBoxFor(m => m.Name)
+        <br />
+
+                @Html.LabelFor(m=> m.Email)
+                @Html.TextBoxFor(m => m.Email)
+        <br />
+ 
+                @Html.LabelFor(m => m.Password)<br /><br />
+                @Html.PasswordFor(m => m.Password)
+
+                   
+        <br />
+  
+                @Html.LabelFor(m => m.ConfirmPassword)<br /><br />
+                @Html.PasswordFor(m => m.ConfirmPassword)
+         <br />
+    <br />
+            @Html.LabelFor(m => m.Gender)
+               @Html.DropDownListFor(m => m.Gender, new SelectList(new [] {"Male", "Female"})) 
+        <br />
+        <br />
+                @Html.LabelFor(m => m.Mobile)
+                @Html.TextBoxFor(m => m.Mobile)
+        <br />
+        <br />
+        <input type="submit"  value="Register" onClick="alert('Registration successful')" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+          
+ </section>               
+         @* <section class="form">
+    		<form id="contactform" action="~/Register/RegisterUser" method="post"> 
+
+    			<p class="contact"><label for="name">Name</label></p> 
+    			<input id="name" name="name" placeholder="First and Last name" required="" tabindex="1" type="text"> 
+    			
+    			<p class="contact"><label for="email">Email</label></p> 
+    			<input id="email" name="email" placeholder="example@domain.com" required="" type="email"> 
+                
+                <p class="contact"><label for="password">Password</label></p> 
+    			<input type="password" id="password" name="password" required=""> 
+
+                <p class="contact"><label for="repassword">Confirm password</label></p> 
+    			<input type="password" id="repassword" name="repassword" required=""> 
+                 
+  
+            <select class="select-style gender" name="gender">
+            <option value="select">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Other</option>
+            </select><br><br>
+            
+            <p class="contact"><label for="phone">Mobile phone</label></p> 
+            <input id="mobile" name="mobile" placeholder="phone number" required="" type="text"> <br>
+
+            <input class="button" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit" onclick="alert()"> 	 
+   </form> 
+</section> *@
+            <br /><br />
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+			<div>
+			<div>
+				<h3>Cooking Video</h3>
+				<a href="~/Home/videos"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+			<div>
+				<h3>Featured Recipes</h3>
+				<ul id="featured">
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/sandwich.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Beef Sandwich</a></h2>
+							<span>by: Anna</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Biscuit &amp; Sandwich</a></h2>
+							<span>by: Sarah</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/pizza.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Delicious Pizza</a></h2>
+							<span>by: Rico</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Blog</h3>
+				<ul id="blog">
+					<li>
+						<a href="~/Home/blog">Your website is really fantastic.</a>
+						<span class="date">Jan 9, by Liza</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">I love your recipes.your website is a great platform.</a>
+						<span class="date">Feb 16, by Myk</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">Food and recipes online is really awesome.</a>
+						<span class="date">March 15, by Xaxan</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Get Updates</h3>
+				<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+				<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+				<a href="http://freewebsitetemplates.com/go/youtube/" target="_blank" id="youtube">Youtube</a>
+				<a href="http://freewebsitetemplates.com/go/flickr/" target="_blank" id="flickr">Flickr</a>
+				<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
+			</div>
+		</div>
+	
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+
+	</div>
+        </div>
+</body>
+</html>

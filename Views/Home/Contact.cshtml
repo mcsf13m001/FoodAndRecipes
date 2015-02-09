@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About -Food &amp; Recipes Online</title>
+</head>
+
+<body>
+	
+	<div class="body">
+		<div>
+			<div class="header">
+				<ul>
+					<li>
+                        @Html.ActionLink("Home", "Index", "Home");
+					</li>
+					<li>
+                        @Html.ActionLink("Menu", "Menu", "Menu");                             
+					</li>
+					<li >
+                        @Html.ActionLink("Videos", "videos", "Home");
+					</li>
+					<li >
+                        @Html.ActionLink("About", "about", "About");
+					</li>
+					<li>
+                        @Html.ActionLink("Blog", "blog", "Home");
+					</li>                 
+                    <li class="current">
+                        @Html.ActionLink("Contact Us", "Contact", "Home");
+					</li>
+                    <li>
+                        @Html.ActionLink("Login", "login", "Login");
+					</li>
+				</ul>
+			</div>
+			<div class="body">
+				<div id="content">
+					<div>
+						<div>
+                           
+
+     <form>
+    <fieldset>
+    <legend>Give your Feed Back</legend> 
+         <textarea rows="5" spellcheck placeholder="Type something…"></textarea><br /><br />
+    <button type="submit" onClick="mailto:fatimah_514@hotmail.com" class="btn">Save FeedBack</button>
+    </fieldset>
+    </form>
+							<p> Dear customer you are always valuable for us!
+                                <br /></p>
+                                <h4>Manager</h4>
+                            <p>Fatima Sajjad<br />
+                                106-c D.H.A Laohre Cantt<br />
+                                0481-23220003</p>
+
+                            <h4>Officer</h4>
+                            <p>Sana Bukhari<br />
+                                106-c D.H.A Laohre Cantt<br />
+                                0481-25622003</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div>
+			<div>
+				<h3>Cooking Video</h3>
+				<a href="~/Home/videos"><img src="~/images/cooking-video.png" alt="Image"></a>
+				<span>Vegetable &amp; Rice Topping</span>
+			</div>
+			<div>
+				<h3>Featured Recipes</h3>
+				<ul id="featured">
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/sandwich.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Beef Sandwich</a></h2>
+							<span>by: Anna</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Biscuit &amp; Sandwich</a></h2>
+							<span>by: Sarah</span>
+						</div>
+					</li>
+					<li>
+						<a href="~/Menu/Menu"><img src="~/images/pizza.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="~/Menu/Menu">Delicious Pizza</a></h2>
+							<span>by: Rico</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Blog</h3>
+				<ul id="blog">
+					<li>
+						<a href="~/Home/blog">Your website is really fantastic.</a>
+						<span class="date">Jan 9, by Liza</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">I love your recipes.your website is a great platform.</a>
+						<span class="date">Feb 16, by Myk</span>
+					</li>
+					<li>
+						<a href="~/Home/blog">Food and recipes online is really awesome.</a>
+						<span class="date">March 15, by Xaxan</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Get Updates</h3>
+				<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
+				<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
+				<a href="http://freewebsitetemplates.com/go/youtube/" target="_blank" id="youtube">Youtube</a>
+				<a href="http://freewebsitetemplates.com/go/flickr/" target="_blank" id="flickr">Flickr</a>
+				<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
+			</div>
+		</div>
+	
+	<div class="footer">
+		<div>
+			<p>
+				&copy; Copyright 2012. All rights reserved
+			</p>
+		</div>
+
+	</div>
+        </div>
+</body>
+</html>
